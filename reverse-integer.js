@@ -2,8 +2,6 @@
 
 // Assume the environment does not allow you to store 64-bit integers (signed or unsigned).
 
- 
-
 // Example 1:
 
 // Input: x = 123
@@ -26,26 +24,37 @@
 
 var reverse = function(x) {
 
+    if (x > 2147483647){
+        return 0;
+    }
+
     let inputString = x.toString();
     let returnString = '';
 
-    if (x < 0){
-        returnString += '-'
-    }
 
     for (let i = inputString.length - 1; i >= 0; i--){
-        if (inputString[i] > 0){
+        if (inputString[i] >= 0){
             returnString += inputString[i];
         }
     }
     
-    return returnString * 1;
+    if (returnString > 2147483647){
+        return 0;
+    }
+
+    if (x < 0){
+        return returnString * -1;
+    } else {
+        return returnString * 1;
+    }
 
 };
 
 
+// Test cases. 
 console.log('test 1, expected output 321', reverse(123));
 console.log('test 2, expected output -321', reverse(-123));
 console.log('test 3, expected output 21', reverse(120));
 console.log('test 4, expected output 0', reverse(0));
 console.log('test 4, expected output 23456', reverse(65432));
+console.log('test 5, expected output 109', reverse(901000));
