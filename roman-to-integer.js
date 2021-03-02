@@ -69,6 +69,8 @@ var romanToInt = function(s) {
     return returnValue;
 };
 
-console.log(romanToInt('III'));
-console.log(romanToInt('IV'));
-console.log(romanToInt('MCMXCIV'));
+console.log('test 1, expected output 3', romanToInt('III'));
+console.log('test 2, expected output 4', romanToInt('IV'));
+console.log('test 3, expected output 9', romanToInt('IX'));
+console.log('test 4, expected output 58', romanToInt('LVIII'));
+console.log('test 5, expected output 1994', romanToInt('MCMXCIV'));
