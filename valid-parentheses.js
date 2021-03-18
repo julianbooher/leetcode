@@ -29,9 +29,12 @@
 
 
 var isValid = function(s) {
-    for (let i = 0; i < s.length/2; i++){
-        if (s[i] !== s[s.length - 1 - i]){
-            return false;
+    let j = s.length;
+    for (let i = 0; i < s.length; i++){
+        if (s[i] === s[s.length - 1 - i]){
+            
+        } else if (s[i] === s[i + 1]){
+            
         }
     }
     return true;
