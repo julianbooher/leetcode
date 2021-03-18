@@ -38,4 +38,4 @@ const longestCommonPrefix = function(strs) {
     return output;
 };
 
-console.log(longestCommonPrefix(["flower","flow","flight"]));
+console.log('Test 1: expected output is fl: ', longestCommonPrefix(["flower","flow","flight"]));
