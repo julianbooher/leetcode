@@ -28,17 +28,33 @@
 // Output: true
 
 
+
+
 var isValid = function(s) {
-    let j = s.length;
-    for (let i = 0; i < s.length; i++){
-        if (s[i] === s[s.length - 1 - i]){
-            
-        } else if (s[i] === s[i + 1]){
-            
+
+    const closingKeys = {
+        '[': ']',
+        '(': ')',
+        '{': '}'
+    }
+
+    let bracketsArray = [];
+    for(let i = 0; i < s.length; i++){
+        if (Object.keys(closingKeys).indexOf(s[i]) !== -1){
+            bracketsArray.push(s[i])
+        } else if (bracketsArray.length > 0 && closingKeys[bracketsArray[bracketsArray.length - 1]] === s[i]){
+            bracketsArray.pop();
+        } else {
+            return false;
         }
     }
-    return true;
-};
+    
+    if (bracketsArray.length > 0){
+        return false;
+    } else {
+        return true; 
+    }
+}
 
 console.log('Test 1, expected output true: ', isValid('()'));
 console.log('Test 2, expected output true: ', isValid('()[]{}'));
