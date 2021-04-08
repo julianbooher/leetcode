@@ -32,7 +32,9 @@
 // Explanation: Your function should return length = 5, with the first five elements of nums being modified to 0, 1, 2, 3, and 4 respectively. It doesn't matter what values are set beyond the returned length.
 
 let removeDuplicates = function(nums) {
+    // loop through the array that's passed in.
     for(let i = 0; i < nums.length; i++){
+        // if the current value is the same as the previous value, remove the value and move the index back 1 to offset that loss.
         if(i > 0 && nums[i] === nums[i-1]){
             nums.splice(i, 1);
             i--;
