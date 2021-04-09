@@ -33,9 +33,7 @@ var strStr = function(haystack, needle) {
 
     for(let i = 0; i < haystack.length; i++){
         if(haystack[i] === needle[0]){
-            for(let j = 0; j < needle.length; j++){
-                subString += haystack[i+j];
-            }
+            subString = haystack.substring(i, i + needle.length)
             if (subString === needle){
                 return i
             } else {
