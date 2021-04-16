@@ -32,7 +32,7 @@ var searchInsert = function(nums, target) {
         }
     }
 
-    return nums.length + 1;
+    return nums.length;
 };
 
 console.log('test 1, output should be 2:', searchInsert([1,3,5,6], 5));
