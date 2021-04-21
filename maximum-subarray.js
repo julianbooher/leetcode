@@ -18,7 +18,7 @@
 
 var maxSubArray = function(nums) {
     let sum = 0;
-    let maxSum = -10000;
+    let maxSum = -Infinity;
     
     if(nums.length === 0) return 0;
     if(nums.length === 1) return nums[0]
