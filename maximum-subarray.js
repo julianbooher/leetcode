@@ -18,7 +18,17 @@
 
 var maxSubArray = function(nums) {
     let leftIndex = 0;
-    let rightIndex = 0;
+    let highSum = 0;
+    let currentSum = 0;
+    if (nums.length === 1){
+        return nums[0]
+    } else {
+        for(let i = 0; i < nums.length; i++){
+            for()
+        }
+
+    }
+
 
     // this function sums the array
     // nums.reduce((x, y) => x + y);
