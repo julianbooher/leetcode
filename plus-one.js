@@ -22,7 +22,25 @@
 // Output: [1]
 
 var plusOne = function(digits) {
+
+    let newDigits = digits;
     
+    // Boolean to let the loop know to increment the digit
+    let increment = true;
+
+    for(let i = newDigits.length - 1; i >= 0; i--){
+        if(increment === true && newDigits[i] < 9){
+            newDigits[i]++;
+            increment = false;
+        } if (increment === true && newDigits[i] === 9){
+            newDigits[i] = 0;
+            if (i === 0){
+                newDigits.unshift(1)
+            }
+        }
+    }
+
+    return newDigits;
 };
 
 console.log('test 1, output should be [1,2,4]', plusOne([1,2,3]));
