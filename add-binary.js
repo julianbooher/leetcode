@@ -46,19 +46,30 @@
 var addBinary = function(a, b) {
 
     let output = [];
+    let arrayA = a.split('')
+    let arrayB = b.split('')
     let remainder = 0;
-    let highLength = a.length > b.length ? a.length : b.length
+    let highLength = arrayA.length > arrayB.length ? arrayA.length : arrayB.length
     let digitA = 0;
     let digitB = 0;
     let sum = 0;
 
+
+    if (arrayA.length > arrayB.length){
+        while(arrayB.length < arrayA.length){
+            arrayB.unshift('0')        
+        }
+    } else if(arrayB.length > arrayA.length){
+        while(arrayA.length < arrayB.length){
+            arrayA.unshift('0')
+        }
+    }
+
+
     for(let i = highLength - 1; i >= 0; i--){
-        digitA = Number(a[i]) || 0;
-        digitB = Number(b[i]) || 0;
-        console.log('digit a', digitA)
-        console.log('digit b', digitB)
+        digitA = Number(arrayA[i]) || 0;
+        digitB = Number(arrayB[i]) || 0;
         sum = digitA + digitB + remainder;
-        console.log('sum', sum)
         if (sum === 3){
             remainder = 1
             output.unshift('1')
@@ -87,3 +98,4 @@ var addBinary = function(a, b) {
 
 console.log('test 1, output should be "100"', addBinary('11', '1'))
 console.log('test 2, output should be "10101"', addBinary('1010', '1011'))
+console.log('test 3, output should be "1000"', addBinary('111', '1'))
