@@ -15,12 +15,22 @@
 // Explanation: The square root of 8 is 2.82842..., and since the decimal part is truncated, 2 is returned.
 
 
+// var mySqrt = function(x) {
+//     for (let i = x; i >= 0; i--){
+//         if(i * i <= x){
+//             return i
+//         } 
+//     }
+// };
+
 var mySqrt = function(x) {
-    let returnValue = 0;
-    for (let i = x; i >= 0; i--){
-        if(i * i <= x){
+    
+    for (let i = 0; i <= x; i++){
+        if(i * i === x){
             return i
-        } 
+        } else if(i * i > x){
+            return i - 1
+        }
     }
 
     
@@ -31,3 +41,4 @@ console.log('test 2, result should be 2', mySqrt(8));
 console.log('test 3, result should be 3', mySqrt(9));
 console.log('test 4, result should be 4', mySqrt(16));
 console.log('test 5, result should be 25', mySqrt(625));
+console.log('test 6, result should be 70', mySqrt(4900));
