@@ -18,13 +18,11 @@
 var mySqrt = function(x) {
     let returnValue = 0;
     for (let i = x; i >= 0; i--){
-        if(i * i === x){
+        if(i * i <= x){
             return i
-        } else if (i * i < x && i > returnValue){
-            returnValue = i;
-        }
+        } 
     }
-    return returnValue
+
     
 };
 
