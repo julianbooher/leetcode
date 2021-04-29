@@ -19,3 +19,23 @@
 // 1. 1 step + 1 step + 1 step
 // 2. 1 step + 2 steps
 // 3. 2 steps + 1 step
+
+var climbStairs = function(n) {
+    if(n < 4 && n > 0){
+        return n;
+    }
+
+    let x = 1;
+    let y = 2;
+
+    for (let i = 3; i <= n; i++){
+        let z = x + y;
+        x = y;
+        y = z;
+    }
+    return y;
+};
+
+console.log('test 1, output should be 2:', climbStairs(2));
+console.log('test 2, output should be 3:', climbStairs(3));
+console.log('test 3, output should be 5:', climbStairs(4));
