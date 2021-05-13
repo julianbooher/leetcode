@@ -4,15 +4,22 @@ class Solution(object):
         :type n: int
         :rtype: int
         """
-        factorial = 1
-        res = 0
-        for i in range (1, n + 1):
-            factorial = factorial * i
+        # factorial = 1
+        # res = 0
+        # for i in range (1, n + 1):
+        #     factorial = factorial * i
 
 
-        while(factorial % 10 == 0):
-            factorial = factorial / 10
-            res = res + 1
+        # while(factorial % 10 == 0):
+        #     factorial = factorial / 10
+        #     res = res + 1
+
+        # return res
+
+        i, res = 5, 0
+        while i <= n:
+            res += n // i
+            i = i * 5
 
         return res
         
